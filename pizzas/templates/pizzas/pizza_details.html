@@ -10,7 +10,7 @@
     <img src="{% static pizza.picture.url %}{{ pizza.picture }}" alt="Pizza image">
 </ul>
 
-<form action="" method="POST">
+<form action="{% url 'submit_comment' pizza_id=pizza.id %}" method="POST">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Add Comment">
