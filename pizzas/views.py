@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Pizza, Topping
+from .forms import CommentForm
 # Create your views here.
 
 def home(request):
@@ -33,3 +34,8 @@ def pizza_details(request, pizza_id):
         'picture': pizza.picture,
     }
     return render(request, 'pizzas/pizza_details.html',context)
+
+
+def add_comment(request, pizza_id):
+    form = CommentForm()
+    return render(request, 'pizzas/add_comment.html', {'form': form})

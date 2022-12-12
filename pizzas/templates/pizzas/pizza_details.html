@@ -7,7 +7,7 @@
     {% for topping in toppings %}
         <li>{{ topping }}</li>
     {% endfor %}
-    <img src="{{ MEDIA_URL }}{{ pizza.picture }}" alt="Pizza image">
+    <img src="{% static pizza.picture.url %}{{ pizza.picture }}" alt="Pizza image">
 </ul>
 {% endblock content %}
 
